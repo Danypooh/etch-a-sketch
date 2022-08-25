@@ -1,0 +1,9 @@
+div {
+ display: flex;
+}
+
+.squares {
+  border: 2px solid black;
+  width: 4px;
+  height: 4px;
+}
