@@ -1,9 +1,13 @@
-div {
- display: flex;
+#grid {
+ display: grid;
+ gap: 10px;
+ border: 2px solid black;
+ grid-template-columns: repeat(16, 10px);
 }
 
-.squares {
+.cell {
+  display: flex;
   border: 2px solid black;
-  width: 4px;
-  height: 4px;
+  width: 10px;
+  height: 10px;
 }
