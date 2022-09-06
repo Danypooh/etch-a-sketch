@@ -1,8 +1,12 @@
-#grid {
+* {
+  box-sizing: border-box;
+}
+
+#grid {   /*CSSgrid*/
  display: grid;
- gap: 10px;
+ gap: 7px;
  border: 2px solid black;
- grid-template-columns: repeat(16, 10px);
+ width: 960px;
 }
 
 .cell {
