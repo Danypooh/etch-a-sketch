@@ -1,11 +1,16 @@
-let size;
-let button = document.querySelector('#grid-size');
+let gridSize;    //variable for size of grid
+let flag = 1;   //variable to handle clearGrid when Grid size button is pushed
+let button = document.querySelector('#grid-size');  //addEventListener to GridSize button
 button.addEventListener('click', function handleClick() {
-  size = window.prompt("Please enter the number of squares per side for the new grid");
-  createGrid(size);
+  if (flag != 1) {
+    clearGrid();
+  }
+  gridSize = window.prompt("Please enter the number of squares per side for the new grid");
+  createGrid(gridSize);
+  flag++;
 });
 
-let clear = document.querySelector('#clear');
+let clear = document.querySelector('#clear'); //addEventListener to Clear button
 clear.addEventListener('click', function handleClick() {
   try {
     clearGrid();
@@ -15,12 +20,12 @@ clear.addEventListener('click', function handleClick() {
   }
 }); 
 
-function createGrid (size = 16) {  //CSSgrid
+function createGrid (gridSize = 16) {  //CSSgrid
   let grid = document.querySelector('#grid');
-  grid.style.gridTemplateColumns = `repeat(${size}, auto)`
-  grid.style.gridTemplateRows = `repeat(${size}, auto)`
-  for (let j = size; j > 0; j--) {
-    for (let i = size; i > 0; i--){
+  grid.style.gridTemplateColumns = `repeat(${gridSize}, auto)`
+  grid.style.gridTemplateRows = `repeat(${gridSize}, auto)`
+  for (let j = gridSize; j > 0; j--) {
+    for (let i = gridSize; i > 0; i--){
         let cell = document.createElement('div');
         cell.classList.add('cell');
         grid.appendChild(cell);
@@ -33,8 +38,8 @@ function createGrid (size = 16) {  //CSSgrid
 
 function clearGrid () {
   let grid = document.querySelector('#grid');
-  for (let j = size; j > 0; j--) {
-    for (let i = size; i > 0; i--){
+  for (let j = gridSize; j > 0; j--) {
+    for (let i = gridSize; i > 0; i--){
         let cell = document.querySelector('.cell');
         grid.removeChild(cell);
     }
