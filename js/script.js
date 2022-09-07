@@ -6,8 +6,13 @@ button.addEventListener('click', function handleClick() {
     clearGrid();
   }
   gridSize = window.prompt("Please enter the number of squares per side for the new grid");
+  if (gridSize > 100) {  //only accept values between 0 and 100
+    window.alert("Please enter a value between 0 and 100");
+  }
+  else {
   createGrid(gridSize);
   flag++;
+  }
 });
 
 let clear = document.querySelector('#clear'); //addEventListener to Clear button
