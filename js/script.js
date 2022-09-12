@@ -17,6 +17,7 @@ button.addEventListener('click', function handleClick() {
 
 let clear = document.querySelector('#clear'); //addEventListener to Clear button
 clear.addEventListener('click', function handleClick() {
+  flag = 1;
   try {
     clearGrid();
   }
@@ -50,3 +51,26 @@ function clearGrid () {
     }
   }
 }
+
+/*let erase = document.querySelector('#erase');  //addEventListener to Erase button
+erase.addEventListener('click', function handleEraseClick() {
+  try {
+    if (flag != 1) {
+      eraseGrid();
+    }
+  }
+  catch (error) {
+    console.log(error);
+  }
+});
+
+function eraseGrid () {
+  flag = 1;
+  let grid = document.querySelector('#grid');
+  for (let j = gridSize; j > 0; j--) {
+    for (let i = gridSize; i > 0; i--){
+        let cell = document.querySelector('.cell');
+        cell.classList.add('');
+    }
+  }
+}*/

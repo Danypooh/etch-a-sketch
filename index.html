@@ -10,8 +10,25 @@
 </head>
 
 <body>
-  <div> <button id="grid-size">Grid size</button></div>
-  <div> <button id="clear">Clear</button></div>
-  <div id="grid"></div>
+  <div id="header"> <h1>Etch a sketch!</h1></div>
+
+  <div id="container">
+    <div id="side-bar">
+      <div> <button id="grid-size">Grid size</button></div>
+      <div> <button id="clear">Clear</button></div>
+      <div> <button id="erase">Erase</button></div>
+    </div>
+    <div id="grid"></div>
+  </div>
+
+  <div id="footer"> 
+    <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear())
+        </script>
+        <a href="https://github.com/Danypooh" target="_blank"> Danypooh</a>
+    </p>
+  </div>
 </body>
 </html>
